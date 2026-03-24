@@ -4,4 +4,5 @@ Started to learn HTML to build the skills.
 * Image adding.
 * Using links.
 * My Github Repositories Link.
+* Style Attributes.
 
