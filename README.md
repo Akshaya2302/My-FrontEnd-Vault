@@ -3,7 +3,7 @@
 > A dedicated space where I document my journey of mastering the fundamentals of web development, starting with semantic HTML and modern styling attributes.
 
 ---
-
+yolo badge testing
 ### 🚀 Journey So Far
 I am currently building a solid foundation in frontend development to complement my AI & Machine Learning goals. This repository tracks my progress from "Hello World" to structured web layouts.
 
