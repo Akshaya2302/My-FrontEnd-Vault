@@ -1,4 +1,4 @@
-# 🌐 Web-Development-HTML
+# 🌐 WEB-DEVELOPMENT-HTML/CSS
 
 > A dedicated space where I document my journey of mastering the fundamentals of web development, starting with semantic HTML and modern styling attributes.
 
