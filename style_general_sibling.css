@@ -1,0 +1,17 @@
+/* Targets ALL <p> tags that come anywhere after the <h2> inside the container */
+h2 ~ p {
+  color: #00bcd4; /* Vibrant Cyan Text */
+  font-weight: 500;
+  padding: 5px;
+  border-left: 3px solid #00bcd4;
+  margin-bottom: 8px;
+}
+
+/* Targets ALL <p> tags that come anywhere after the <h2> */
+h2 ~ p {
+  color: #9c27b0; /* Vibrant Purple Text */
+  font-weight: bold;
+  background-color: #f3e5f5; /* Light purple background box */
+  padding: 8px;
+  margin-bottom: 5px;
+}
