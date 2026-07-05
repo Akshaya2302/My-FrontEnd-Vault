@@ -1,0 +1,12 @@
+.default-box {
+  width: 200px;
+  height: 100px;
+  background-color: #e0f7fa; /* Light cyan */
+
+  /* Adding padding and borders adds to the total width */
+  padding: 10px; /* 20px on all 4 sides */
+  border: 10px solid #006064; /* 5px solid dark teal */
+
+  /* Pushes this entire block away from the edges of the page */
+  margin: 30px;
+}
