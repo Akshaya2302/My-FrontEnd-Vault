@@ -1,0 +1,6 @@
+/* Injects the word "WARNING: " in bold red before the text of every paragraph inside .alert-box */
+.alert-box p::before {
+  content: "WARNING: ";
+  color: red;
+  font-weight: bold;
+}
