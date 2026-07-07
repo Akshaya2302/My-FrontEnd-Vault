@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Variables Demo</title>
+</head>
+<body>
+    <h1>JavaScript Variables Demo</h1>
+    <p id="demo"></p>
+
+    <script>
+        // 1. Storing different types of data inside variables (boxes)
+        let name = "John";           // String (text data)
+        let age = 25;               // Number
+        let isStudent = true;       // Boolean (true/false switch)
+        const PI = 3.14159;         // Constant (this value cannot change)
+        let colors = ["red", "blue", "green"];  // Array (a list of items)
+
+        // 2. Displaying the values on the webpage
+        // The '+' symbol here is called a concatenate operator (it joins text together)
+        document.getElementById('demo').innerHTML =
+        "Name: " + name + "<br>" + 
+        "Age: " + age + "<br>" +
+        "Is Student: " + isStudent + "<br>" +
+        "PI value: " + PI + "<br>" +
+        "Colors: " + colors[0] + ", " + colors[1] + ", " + colors[2];
+    </script>
+</body>
+</html>
