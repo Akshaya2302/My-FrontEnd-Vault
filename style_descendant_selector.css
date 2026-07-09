@@ -1,0 +1,7 @@
+/* This targets ONLY <p> tags that are inside an element with class "blog-box" */
+.blog-box p {
+  color: #e91e63; /* Vibrant Pink Text */
+  font-weight: bold; /* Makes text bold */
+  background-color: #fce4ec; /* Light pink background box */
+  padding: 10px;
+}
