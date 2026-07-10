@@ -1,0 +1,13 @@
+/* Targets ONLY a <p> tag that comes IMMEDIATELY after an <h2> tag */
+h2 + p {
+  color: #ff9800; /* Bright orange text */
+  font-size: 20px; /* Makes it stand out as an introduction */
+  font-weight: bold;
+}
+/* Targets a <p> that is immediately next to an <h2>, 
+   but ONLY if they are inside an element with the class "news-box" */
+.news-box h2 + p {
+  color: #673ab7; /* Deep Purple text */
+  font-weight: bold;
+  font-size: 18px;
+}
