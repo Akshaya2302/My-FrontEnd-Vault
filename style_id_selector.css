@@ -1,0 +1,7 @@
+/* Targets ONLY the single element with id="main-header" */
+#main-header {
+  color: red; /* Deep Purple Text */
+  text-transform: uppercase; /* Forces all letters to be CAPITALIZED */
+  letter-spacing: 2px; /* Puts extra space between each letter */
+  border-bottom: 4px double #673ab7; /* Fancy double underline */
+}

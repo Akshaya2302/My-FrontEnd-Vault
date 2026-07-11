@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conditionals Demo</title>
+</head>
+<body>
+    <h1>Grade Checker</h1>
+    <!-- Input box where the user types their score -->
+    <input type="number" id="score" placeholder="Enter your score">
+    <!-- Clicking this button triggers our JavaScript function logic -->
+    <button onclick="checkGrade()">Get Grade</button>
+    <!-- Empty paragraph where the result text will be printed -->
+    <p id="result"></p>
+
+    <script>
+        function checkGrade() {
+            // 1. Grab the value typed inside the input box
+            let score = document.getElementById('score').value;
+            let result = "";
+
+            // 2. The Decision Tree (Runs the first condition that matches true)
+            if (score >= 90) {
+                result = "A Grade! Excellent! ";
+            } else if (score >= 80) {
+                result = "B Grade! Very Good! ";
+            } else if (score >= 70) {
+                result = "C Grade! Good! ";
+            } else if (score >= 60) {
+                result = "D Grade! Need Improvement! ";
+            } else {
+                result = "F Grade! Study Harder! ";
+            }
+
+            // 3. Inject the result string back into the HTML paragraph
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>

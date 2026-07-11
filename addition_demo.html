@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Two Numbers</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial;
+            text-align: center;
+            padding: 50px;
+        }
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Add Two Numbers</h1>
+    <input id="a" placeholder="First number">
+    <input id="b" placeholder="Second number">
+    <br><br>
+    
+    <button onclick="add()">Add</button>
+    
+    <h2 id="result"></h2>
+
+    <script>
+        function add() {
+            // CRUCIAL: Number() converts the string input value into an actual math number
+            let x = Number(document.getElementById('a').value);
+            let y = Number(document.getElementById('b').value);
+            
+            let total = x + y;
+            
+            // Injecting the final sum text into the h2 element
+            document.getElementById('result').innerHTML = "Sum = " + total;
+        }
+    </script>
+
+</body>
+</html>

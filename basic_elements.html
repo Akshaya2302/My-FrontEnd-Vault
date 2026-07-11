@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basics Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Basic HTML Elements</h1>
+
+    <div class="container">
+        <!-- 1. Example of an ID -->
+        <h2 id="top-section">1. The ID Attribute</h2>
+        <p>This heading has an <strong>ID</strong> of "top-section". It uniquely identifies this specific element on the page.</p>
+
+        <hr>
+
+        <!-- 2. Example of Radio Buttons -->
+        <h2>2. Radio Buttons</h2>
+        <p>Please select your favorite web technology:</p>
+        <form>
+            <!-- Notice how the 'name' attribute is the same for all three. This groups them! -->
+            <input type="radio" id="tech-html" name="fav_tech" value="HTML">
+            <label for="tech-html">HTML</label><br>
+
+            <input type="radio" id="tech-css" name="fav_tech" value="CSS">
+            <label for="tech-css">CSS</label><br>
+
+            <input type="radio" id="tech-js" name="fav_tech" value="JavaScript">
+            <label for="tech-js">JavaScript</label>
+        </form>
+
+        <hr>
+
+        <!-- 3. Example of an Anchor Tag -->
+        <h2>3. Anchor Tag (Link)</h2>
+        <p>Anchors are used to create links. Here are two examples:</p>
+        <ul>
+            <!-- Link to another website -->
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">Click here to learn more about HTML</a></li>
+            
+            <!-- Link to a specific ID on the same page -->
+            <li><a href="#top-section">Click here to jump back to the "top-section" ID</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

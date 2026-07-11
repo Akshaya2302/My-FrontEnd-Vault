@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>what isDOCTYPE javascript?</title>
+        <style>
+            /* internal css - style for the webpage*/
+            boby
+            {
+
+            }
+            h1{
+                color: #1A56DB;
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+            p{
+                font-size: 20px;
+                color: #333;
+                background-color:azure;
+                border-radius: 10px;
+                display:inline-block;
+                margin-bottom: 20px;
+            }
+            button{
+                background-color:antiquewhite;
+                color:aqua;
+                font-size: 18px;
+                padding: 15px;
+                border: none;
+                boeder-radius: 8px;
+                cursor:pointer;
+                tranisition: background-color 0.3s;
+                
+            }
+            button:hover {
+                background-color: #OD3B9E;
+            }
+        </style>
+    </head>
+</html>

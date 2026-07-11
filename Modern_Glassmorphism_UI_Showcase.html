@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A beautiful display of modern glassmorphism cards with smooth hover animations.">
+    <title>Modern Glassmorphism Design</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #ec4899;
+            --tertiary: #14b8a6;
+            --bg-color: #0f172a;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Gradients */
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: float 10s ease-in-out infinite alternate;
+        }
+
+        .blob-1 {
+            top: -10%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+        }
+
+        .blob-2 {
+            bottom: -10%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+            animation-delay: -5s;
+        }
+
+        .blob-3 {
+            top: 40%;
+            left: 40%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--tertiary) 0%, transparent 70%);
+            animation-delay: -2s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(30px, 50px) scale(1.1); }
+        }
+
+        /* Header Layout */
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #a855f7, #ec4899, #ef4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        p.subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Cards Container */
+        .container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1200px;
+            padding: 0 2rem;
+            z-index: 1;
+        }
+
+        /* Glass Card Design */
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 24px;
+            padding: 2.5rem;
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: skewX(-20deg);
+            transition: 0.5s;
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .card:hover::before {
+            left: 150%;
+        }
+
+        /* Card Content Elements */
+        .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .icon-1 { background: linear-gradient(135deg, #6366f1, #a855f7); }
+        .icon-2 { background: linear-gradient(135deg, #ec4899, #ef4444); }
+        .icon-3 { background: linear-gradient(135deg, #14b8a6, #3b82f6); }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 1rem;
+            font-weight: 300;
+            flex-grow: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: white;
+            color: var(--bg-color);
+            transform: scale(1.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .card { width: 100%; max-width: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Orbs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <header>
+        <h1 id="main-title">Innovate Beyond Limits</h1>
+        <p class="subtitle">Experience the next generation of digital interface design. Stunning glassmorphism combined with fluid gradient animations.</p>
+    </header>
+
+    <main class="container">
+        <!-- Card 1 -->
+        <article class="card" id="card-design">
+            <div class="icon-wrapper icon-1">✨</div>
+            <h2>Sleek Design</h2>
+            <p>Immersive glassmorphism effects that bring depth and hierarchy to your user interface components.</p>
+            <a href="#" class="btn" aria-label="Learn more about sleek design">Learn More</a>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card" id="card-performance">
+            <div class="icon-wrapper icon-2">⚡</div>
+            <h2>Blazing Fast</h2>
+            <p>Optimized CSS animations utilizing hardware acceleration for perfectly smooth 60fps rendering.</p>
+            <a href="#" class="btn" aria-label="Discover performance metrics">Discover</a>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card" id="card-responsive">
+            <div class="icon-wrapper icon-3">📱</div>
+            <h2>Responsive</h2>
+            <p>Fluid layouts that adapt seamlessly to any device size, providing a consistent experience everywhere.</p>
+            <a href="#" class="btn" aria-label="Explore responsive features">Explore</a>
+        </article>
+    </main>
+
+    <script>
+        // Adding a subtle 3D tilt effect on mouse move
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = ((y - centerY) / centerY) * -10;
+                const rotateY = ((x - centerX) / centerX) * 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) translateY(0)`;
+                // Restore the hover effect transform on mouse leave by let CSS take over again briefly
+                setTimeout(() => {
+                    if(!card.matches(':hover')) {
+                        card.style.transform = '';
+                    }
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
