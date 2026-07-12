@@ -35,13 +35,13 @@ select {
 fieldset {
   padding: 20px;
   border: 1px solid #e5e7eb;
-  margin-bottom: 2px;
+  margin-bottom: 20px;
   border-radius: 20px;
 }
 legend {
   font-weight: bold;
   padding: 0 10px;
-  color: indigo;
+  color: rgb(0, 0, 0);
 }
 label {
   font-size: 14px;
