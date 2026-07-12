@@ -1,0 +1,8 @@
+/* Targets ONLY paragraphs inside .content-panel that have the standalone word "hacker" in their data-keywords list */
+.content-panel p[data-keywords~="hacker"] {
+  color: #2e7d32;             /* Tech Green Text */
+  font-weight: bold;
+  background-color: #e8f5e9;  /* Light green background highlight */
+  padding: 10px;
+  border-left: 5px solid #2e7d32;
+}
