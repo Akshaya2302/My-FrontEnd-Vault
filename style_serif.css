@@ -1,0 +1,24 @@
+/* Universal reset using the border-box trick you just learned */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 40px;
+}
+
+/* Forces the browser to look up its default system serif font directly */
+.fallback-serif {
+  font-family: serif;
+  margin-bottom: 20px;
+}
+
+/* The Professional Font Stack Way: 
+   Tells the browser: Use Georgia first. If the computer doesn't have it, use standard serif. */
+.preferred-serif {
+  font-family: Georgia, "Times New Roman", monospace, serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
