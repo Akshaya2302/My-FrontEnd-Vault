@@ -1,0 +1,90 @@
+/* Structural Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0f172a; /* Dark slate */
+  color: white;
+  font-family: sans-serif;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sandbox-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 200px;
+  height: 220px;
+  background-color: #1e293b;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* =======================================================
+   ANIMATION 1: THE BOUNCING BALL
+   ======================================================= */
+.ball {
+  width: 50px;
+  height: 50px;
+  background-color: #e65100; /* Deep Orange */
+  border-radius: 50%; /* Makes it a circle */
+
+  /* Attaching the animation properties individually: */
+  animation-name: bounce;        /* 1. Which keyframe timeline to use */
+  animation-duration: 0.6s;      /* 2. How long one loop takes */
+  animation-iteration-count: infinite; /* 3. Loop forever */
+  animation-direction: alternate; /* 4. Go forward (0% to 100%) then backward (100% to 0%) */
+  animation-timing-function: ease-in; /* 5. Start slow, accelerate down like gravity */
+}
+
+/* The Timeline for Bouncing */
+@keyframes bounce {
+  0% {
+    transform: translateY(-60px); /* Start high up in the air */
+  }
+  100% {
+    transform: translateY(0);     /* Hit the ground floor */
+  }
+}
+
+/* =======================================================
+   ANIMATION 2: THE LOADING SPINNER
+   ======================================================= */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #334155;     /* Dark grey track background */
+  border-top: 5px solid #00838f; /* Light teal spinning tip */
+  border-radius: 50%;
+
+  /* Using the shorthand method (all in one line):
+     Syntax: animation: name duration timing-function iteration-count; */
+  animation: spin 1s linear infinite;
+}
+
+/* The Timeline for Spinning */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); /* Start face up */
+  }
+  100% {
+    transform: rotate(360deg); /* Spin one full complete circle */
+  }
+}
