@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 30px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+/* Perfect for digital layout design */
+.pixel-text {
+  font-size: 16px;
+}
+
+/* Great for printing, bad for screen layout */
+.point-text {
+  font-size: 12pt;
+}
+
+/* Massively oversized for normal screen layouts */
+.cm-text {
+  font-size: 1cm;
+}
