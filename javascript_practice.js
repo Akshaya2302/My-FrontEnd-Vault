@@ -15,4 +15,5 @@ if (isTrue) {
 console.log("Your number is " + a);
 
 document.title = "hey im good";
+//modified
 // document.body.style.backgroundColor = "red";
