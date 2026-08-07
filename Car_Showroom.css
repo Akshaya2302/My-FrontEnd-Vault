@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg-deep: #12151b;
+  --bg-panel: #1c212b;
+  --bg-panel-alt: #232a36;
+  --bg-field: #161a22;
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --accent-amber: #ff8a3d;
+  --accent-amber-soft: rgba(255, 138, 61, 0.35);
+  --accent-blue: #6fb1ff;
+  --text-primary: #eef1f6;
+  --text-muted: #8891a3;
+  --radius-lg: 18px;
+  --radius-md: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 24px;
+  font-family: "Inter", sans-serif;
+  color: var(--text-primary);
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(111, 177, 255, 0.1),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      rgba(255, 138, 61, 0.1),
+      transparent 42%
+    ),
+    var(--bg-deep);
+}
+
+.container {
+  width: 420px;
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  padding: 40px 34px 32px;
+  border: 2px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, var(--bg-panel), var(--bg-panel-alt));
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+/* top racing-stripe accent */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-amber), var(--accent-blue));
+}
+
+/* garage sign, purely typographic — no markup change needed */
+.container::after {
+  content: "🏁  Exotic Car Showroom";
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  order: -1;
+}
+
+label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+  margin-top: 6px;
+}
+
+#car-brand,
+#car-model {
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-strong);
+  background: var(--bg-field);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  padding: 12px 14px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#car-brand::placeholder,
+#car-model::placeholder {
+  color: var(--text-muted);
+}
+
+#car-brand:focus,
+#car-model:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 4px rgba(111, 177, 255, 0.15);
+}
+
+button {
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 13px 10px;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1a1206;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--accent-amber), #ffb26b);
+  box-shadow: 0 8px 22px var(--accent-amber-soft);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 12px 28px var(--accent-amber-soft);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* garage grid */
+.garage-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+  counter-reset: stall;
+}
+
+.garage-container:empty::after {
+  content: "Your garage is empty — add your first car above.";
+  grid-column: 1 / -1;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 18px 8px;
+  border: 1.5px dashed var(--border-soft);
+  border-radius: var(--radius-md);
+}
+
+/* style every car entry your script.js creates, whatever tag it uses */
+.garage-container > * {
+  counter-increment: stall;
+  position: relative;
+  background: var(--bg-field);
+  border: 1px solid var(--border-soft);
+  border-left: 3px solid var(--accent-amber);
+  border-radius: var(--radius-md);
+  padding: 14px 12px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  list-style: none;
+  animation: pull-in 0.35s ease both;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.garage-container > *::before {
+  content: "STALL " counter(stall, decimal-leading-zero);
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent-blue);
+  margin-bottom: 6px;
+}
+
+.garage-container > *:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-blue);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+@keyframes pull-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 40px 16px;
+  }
+  .container {
+    width: 100%;
+    padding: 32px 20px 26px;
+  }
+}
+h1 {
+  color: #ff9950;
+  letter-spacing: 2px;
+}
