@@ -1,0 +1,7 @@
+/* Targets ONLY elements inside .main-container whose data-category attribute 
+   is EXACTLY "cs" OR starts with "cs-" */
+.main-container h3[data-category|="cs"] {
+  color: #673ab7;             /* Deep Purple Text */
+  border-left: 4px solid #673ab7;
+  padding-left: 10px;
+}
