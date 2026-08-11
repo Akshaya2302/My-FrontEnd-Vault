@@ -1,0 +1,14 @@
+/* Rule 1: Targets ONLY <a> tags that HAVE a 'target' attribute present */
+.links-container a[target] {
+  color: #ff5722; /* Orange text */
+  font-weight: bold;
+  background-color: #ffe0b2; /* Light orange background highlight */
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+/* Rule 2: Targets ANY element on the page that HAS a 'title' attribute present */
+[title] {
+  border-bottom: 2px dashed #4caf50; /* Green dashed line underneath */
+  cursor: help; /* Changes mouse cursor to a question mark */
+}
