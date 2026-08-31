@@ -1,0 +1,58 @@
+/* Universal reset to clean out default browser spacing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 40px;
+  background-color: #f9f9f9;
+}
+
+.sandbox {
+  max-width: 600px;
+  background-color: white;
+  padding: 30px;
+  border: 1px solid #ddd;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin-top: 25px;
+  margin-bottom: 8px;
+  color: #e65100; /* Orange highlight header */
+}
+
+/* 1. Text Alignment (Values: left, right, center, justify) */
+.align-demo {
+  text-align: center;
+}
+
+/* 2. Text Decoration (Values: none, underline, line-through, overline) */
+.decoration-demo {
+  text-decoration: underline;
+}
+
+/* 3. Text Transform (Values: uppercase, lowercase, capitalize, none) */
+.transform-demo {
+  text-transform: uppercase; /* Converts the lowercase HTML input entirely to uppercase */
+}
+
+/* 4. Letter Spacing (Controls tracking/space between individual characters) */
+.letter-demo {
+  letter-spacing: 10px; /* Spreads out single letters broadly */
+  font-weight: bold;
+}
+
+/* 5. Word Spacing (Controls the gap between separate words) */
+.word-demo {
+  word-spacing: 15px; /* Pushes individual words far apart from each other */
+}
+
+/* 6. Line Height (Controls vertical line stacking. Standard baseline is 1.2) */
+.height-demo {
+  line-height: 2; /* Doubles the vertical space between sentence rows */
+  font-size: 0.95rem;
+}
