@@ -1,0 +1,13 @@
+/* Targets ONLY links inside .links-box whose href attribute STARTS WITH "https://" */
+.links-box a[href^="https://"] {
+  color: #2e7d32;             /* Secure Green Text */
+  font-weight: bold;
+  border-left: 4px solid #2e7d32;
+  padding-left: 8px;
+}
+
+/* Targets ONLY links inside .links-box whose href attribute STARTS WITH "http://" */
+.links-box a[href^="http://"] {
+  color: #c62828;             /* Warning Red Text */
+  text-decoration: dotted underline; /* Adds a warning dotted line under it */
+}
