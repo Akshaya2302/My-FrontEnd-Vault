@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 30px;
+  font-family: sans-serif;
+}
+
+/* Wide Parent Container */
+.parent-wide {
+  width: 600px; /* Fixed width */
+  background-color: #dddddd; /* Light grey wrapper */
+  padding: 15px;
+  margin-bottom: 40px;
+}
+
+/* Narrow Parent Container */
+.parent-narrow {
+  width: 300px; /* Half the width of the first one */
+  background-color: #ccc; /* Slightly darker grey wrapper */
+  padding: 15px;
+}
+
+/* The Block Element Inside Them (h2) */
+h2 {
+  background-color: #e65100; /* Bright orange to highlight its shape */
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px;
+  /* Notice we DO NOT declare a width here. 
+ 
+  
+  By default, block elements are width: 100% of their parent! */
+  /* ADD THIS LINE */
+  display: inline-block;
+}
