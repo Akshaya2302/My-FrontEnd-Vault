@@ -1,0 +1,8 @@
+/* Targets ONLY <p> tags that are DIRECT children of .parent-container */
+.parent-container > p {
+  color: #000000; /* Teal text */
+  font-weight: bold;
+  border-left: 4px solid #be1111;
+  padding-left: 10px;
+  background-color: powderblue;
+}
