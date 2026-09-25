@@ -1,0 +1,37 @@
+/* Center everything cleanly on the screen */
+body {
+  background-color: #0f172a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* 1. Style the box structure */
+.simple-box {
+  width: 120px;
+  height: 120px;
+  background-color: #0072ff; /* Initial state color */
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+
+  /* 2. Connect the animation engine step-by-step */
+  animation-name: changeColor; /* Name of our timeline */
+  animation-duration: 2s; /* Total time for one full loop */
+  animation-iteration-count: infinite; /* Makes it loop forever automatically */
+  animation-direction: alternate; /* Glides back and forth instead of snapping */
+  animation-timing-function: ease-in-out; /* Smooth acceleration curve */
+}
+
+/* 3. Define the animation timeline track */
+@keyframes changeColor {
+  0% {
+    background-color: #0072ff; /* 0% progress: Blue */
+    transform: scale(1); /* Standard size */
+  }
+  100% {
+    background-color: #ff416c; /* 100% progress: Red-Pink */
+    transform: scale(1.15); /* Grows 15% larger */
+  }
+}
