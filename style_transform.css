@@ -1,0 +1,75 @@
+/* Clean structural reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0f172a; /* Dark sleek slate background */
+  color: white;
+  font-family: sans-serif;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* Flexbox wrapper to display boxes side-by-side horizontally */
+.sandbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+/* Master box layout style */
+.box {
+  width: 130px;
+  height: 130px;
+  background-color: #e65100; /* Deep orange */
+  border: 2px solid #ffb74d;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.95rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  cursor: pointer;
+
+  /* Crucial safety blanket: Makes the transformations glide smoothly on hover */
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+/* =======================================================
+   THE FOUR CORE TRANSFORMATIONS
+   ======================================================= */
+
+/* 1. TRANSLATE: Moves 25px straight down along the vertical Y-axis */
+.move-box:hover {
+  transform: translateY(25px);
+  background-color: #c62828; /* Turns red */
+}
+
+/* 2. SCALE: Grows the box cleanly by 30% on all edges */
+.grow-box:hover {
+  transform: scale(1.3);
+  background-color: #2e7d32; /* Turns green */
+}
+
+/* 3. ROTATE: Spins the block clock-wise by 45 degrees */
+.spin-box:hover {
+  transform: rotate(45deg);
+  background-color: #1565c0; /* Turns blue */
+}
+
+/* 4. SKEW: Tilts the vertical edges sideways by 20 degrees along the X-axis */
+.tilt-box:hover {
+  transform: skewX(20deg);
+  background-color: #ad1457; /* Turns pink */
+}
