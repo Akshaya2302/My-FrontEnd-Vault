@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0f172a; /* Dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+/* The main card container */
+.interactive-card {
+  width: 280px;
+  height: 180px;
+  background-color: #1e293b; /* Dark slate */
+  border: 2px solid #334155;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+
+  /* =======================================================
+     TRANSITION MECHANICS (EXPANDED PROPERTIES)
+     ======================================================= */
+
+  /* 1. Which CSS property should listen for changes? */
+  transition-property: background-color, border-color;
+
+  /* 2. How long should the transition take to complete? */
+  transition-duration: 0.5s;
+
+  /* 3. The acceleration curve (ease, linear, ease-in, ease-out, ease-in-out) */
+  transition-timing-function: ease-in-out;
+
+  /* 4. A pause window before the motion begins (0s means start instantly) */
+  transition-delay: 0s;
+}
+
+/* The hover state changes for the card */
+.interactive-card:hover {
+  background-color: #0d9488; /* Switches to smooth Teal */
+  border-color: #2dd4bf;
+}
+
+/* The little decorative status dot inside the card */
+.status-dot {
+  width: 20px;
+  height: 20px;
+  background-color: #f43f5e; /* Rose Red */
+  border-radius: 50%;
+  margin-top: 15px;
+
+  /* =======================================================
+     TRANSITION MECHANICS FOR THE CHILD ELEMENT
+     ======================================================= */
+  transition-property: transform, background-color;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(
+    0.68,
+    -0.6,
+    0.32,
+    1.6
+  ); /* Fun bouncy timing curve */
+
+  /* DELAY TRICK: This waits 0.2 seconds before moving. 
+     This makes the dot animate AFTER the card begins changing color! */
+  transition-delay: 0.2s;
+}
+
+/* When the parent card is hovered, change the dot */
+.interactive-card:hover .status-dot {
+  background-color: #ffffff;
+  transform: scale(1.5) rotate(180deg);
+}
