@@ -1,0 +1,132 @@
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- Page ---------- */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 30%, #2b3342 0%, #151922 70%);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* ---------- Traffic light housing ---------- */
+.container {
+  position: relative;
+  width: 150px;
+  padding: 28px 0;
+  margin-bottom: 120px; /* room for the pole */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  background: linear-gradient(145deg, #2a2d34, #101216);
+  border-radius: 28px;
+  border: 3px solid #3a3f4a;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.6),
+    inset 0 2px 4px rgba(255, 255, 255, 0.08),
+    inset 0 -4px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Pole */
+.container::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 140px;
+  background: linear-gradient(90deg, #14161b, #3b404b 50%, #14161b);
+  border-radius: 0 0 6px 6px;
+  z-index: -1;
+}
+
+/* ---------- Lights (shared) ---------- */
+#red-light,
+#yellow-light,
+#green-light {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  /* glassy lens highlight; JS only changes background-color, so this stays */
+  background-image:
+    radial-gradient(
+      circle at 35% 28%,
+      rgba(255, 255, 255, 0.35),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      transparent 55%,
+      rgba(0, 0, 0, 0.35) 100%
+    );
+  box-shadow:
+    0 0 0 5px #08090b,
+    inset 0 -8px 14px rgba(0, 0, 0, 0.5),
+    inset 0 4px 8px rgba(255, 255, 255, 0.08);
+  transition:
+    background-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+/* Visor hood above each light */
+#red-light::before,
+#yellow-light::before,
+#green-light::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: -12px;
+  right: -12px;
+  height: 44px;
+  border-top: 9px solid #08090b;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  pointer-events: none;
+}
+
+/* ---------- Glow when a light is ON ----------
+   The JS sets inline colors, so we detect the "on" state
+   with attribute selectors on the style attribute. */
+#red-light[style*="background-color: red"] {
+  box-shadow:
+    0 0 0 5px #08090b,
+    0 0 25px 8px rgba(255, 50, 40, 0.75),
+    0 0 80px 30px rgba(255, 50, 40, 0.35),
+    inset 0 -6px 12px rgba(120, 0, 0, 0.4);
+}
+
+#yellow-light[style*="background-color: yellow"] {
+  box-shadow:
+    0 0 0 5px #08090b,
+    0 0 25px 8px rgba(255, 220, 40, 0.75),
+    0 0 80px 30px rgba(255, 220, 40, 0.35),
+    inset 0 -6px 12px rgba(150, 110, 0, 0.4);
+}
+
+#green-light[style*="rgb(0, 255, 0)"],
+#green-light[style*="#00ff00"] {
+  box-shadow:
+    0 0 0 5px #08090b,
+    0 0 25px 8px rgba(0, 255, 90, 0.7),
+    0 0 80px 30px rgba(0, 255, 90, 0.3),
+    inset 0 -6px 12px rgba(0, 110, 30, 0.4);
+}
+
+/* ---------- Small screens ---------- */
+@media (max-height: 640px) {
+  .container {
+    transform: scale(0.75);
+  }
+}
