@@ -1,0 +1,7 @@
+/* Targets ANY element with class="highlight" */
+.highlight {
+  background-color: #fff3cd; /* Warm yellow background highlight */
+  color: #856404; /* Dark gold text color */
+  padding: 10px;
+  border-left: 5px solid #ffc107; /* Thick gold bar on the left edge */
+}
