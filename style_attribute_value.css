@@ -1,0 +1,14 @@
+/* Targets ONLY links inside .menu-box whose target attribute is EXACTLY "_blank" */
+.menu-box a[target="_blank"] {
+  color: #d32f2f; /* Dark Red Text */
+  font-weight: bold;
+  background-color: #ffeff0; /* Very light red background */
+  padding: 6px;
+  border: 1px solid #d32f2f;
+}
+
+/* Targets ONLY links inside .menu-box whose target attribute is EXACTLY "_self" */
+.menu-box a[target="_self"] {
+  color: #1976d2; /* Ocean Blue Text */
+  text-decoration: none; /* Removes the default underline */
+}
